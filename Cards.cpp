@@ -13,6 +13,7 @@ Deck::Deck(const Deck& other){
     for(int i=0;i<10;i++){
         card[i] = other.card[i];
     }
+    //return card;
 }
 Deck& Deck::operator=(const Deck& other){
     delete[] card;
@@ -20,16 +21,15 @@ Deck& Deck::operator=(const Deck& other){
     for(int i=0;i<10;i++){
         card[i] = other.card[i];
     }
-    //return *card;
+    //return card;
 }
 void Deck::draw_random_card(){
     seed();
 
     int num;
     int symbol_num;
-    char symbol_char;
-    num = (52%13)+1;
-    symbol_num = (4%4)+1;
+    num = rand()%13+1;
+    symbol_num = rand()%4+1;
     
     switch(symbol_num){
         case 1:
@@ -101,11 +101,16 @@ void Deck::draw_random_card(){
             card[deck_size].value = 10;
             break;
     }
+    
+    sum += card[deck_size-1].value;
     add_deck_size();
-    sum += card[deck_size].value;
 }
 void Deck::seed(){
-    srand(time(NULL));
+    static bool seeded = false; 
+    if (!seeded) {
+        std::srand(std::time(nullptr)); // Seed the random number generator
+        seeded = true; // Set the flag to true
+    }
 }
 int Deck::get_deck_size(){
     return deck_size;
@@ -118,6 +123,7 @@ int Deck::get_sum(){
     for(int i=0;i<deck_size;i++){
         sum+=card[i].value;
     }
+    return sum;
 }
 void Deck::display_cards(){
     cout<<"Cards: ";
