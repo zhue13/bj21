@@ -10,17 +10,27 @@ using namespace std;
 
 int main(void){
 
-    Deck *c1 = new Deck();
+    //Deck *c1 = new Deck();
     Player *player1 = new Player();
     Player *house = new Player();
     Game *game = new Game(1000);
 
-    
+
+    player1->deck->display_cards();
+    player1->hit();
+    player1->deck->display_cards();
+    player1->fill_till_17();
+    player1->deck->display_cards();
+    cout<<player1->is_blackjack()<<endl;
+    cout<<player1->is_over_17()<<endl;
+    //cout<<"cards:"<<player1->deck->display_cards()<<endl;
+
+
+    /* c1->draw_random_card();
     c1->draw_random_card();
     c1->draw_random_card();
     c1->draw_random_card();
-    c1->draw_random_card();
-    c1->display_cards();
+    c1->display_cards(); */
 
 
 
@@ -44,7 +54,7 @@ int main(void){
 
 
     //clean up
-    delete c1;
+    //delete c1;
     delete player1;
     delete house;
     delete game;

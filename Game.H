@@ -1,11 +1,9 @@
 #ifndef GAME_H
 #define GAME_H
-
 #include <stdlib.h>
 #include <cstdlib>
 #include <iostream>
 using namespace std;
-
 
 //destructor not needed, only default members
 class Game{
@@ -23,6 +21,4 @@ class Game{
         void add_rounds();
         int get_rounds();
 };
-
-
 #endif 

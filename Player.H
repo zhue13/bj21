@@ -8,16 +8,12 @@ using namespace std;
 
 class Player{
     private:
-
-        int count;
         bool over_17;
         bool bust;
-        Deck deck;
-
 
     public:
+        Deck* deck; //need this to be public to access display_cards() from main
         Player();  
-        void draw_card();
         void fill_till_17();
         bool is_over_17();
         bool is_bust();
@@ -25,12 +21,7 @@ class Player{
         
         void double_down();
         void split();
-
-        void update_count();
-        void reset_count();
-        void display_card_list();
-
+        void hit();     
 
 };
-
 #endif

@@ -5,15 +5,14 @@
 #include <time.h>
 #include <ctime>
 #include <iostream>
+#include <string.h>
 using namespace std;
 
-
 typedef struct {
-    int number; // used to store A,J,Q,K as 11/10/10/10
-    char value; // used to display A,J,Q,K as their letter
+    int value; // used to store A,J,Q,K as 11/10/10/10
+    string number; // used to display A,J,Q,K as their letter
     char symbol; // spades, diamonds, hearts, or clubs 
 }Card;
-
 
 class Deck{
     private:
@@ -32,5 +31,4 @@ class Deck{
         int get_sum();
         void display_cards();
 };
-
 #endif

@@ -1,49 +1,42 @@
 #include "Player.H"
 
 Player::Player(){
-    count = 0;
     over_17 = false;
     bust = false;
-    //deck = new Deck;
-}
-void Player::draw_card(){
-
+    deck = new Deck;
 }
 void Player::fill_till_17(){
-
+    while(deck->get_sum()<17){
+        deck->draw_random_card();
+    }
 }
 bool Player::is_over_17(){
-    if(count>16&&count<22){
+    if(deck->get_sum()>17){
         return true;
     }
     return false;
 }
 
 bool Player::is_bust(){
-    if(count>21){
+    if(deck->get_sum()>21){
         return true;
     }
     return false;
 }
 bool Player::is_blackjack(){
-    if(count==21){
+    if(deck->get_sum()==21){
         return true;
     }
     return false;
 }
 void Player::double_down(){
-
+    deck->draw_random_card();
 }
 void Player::split(){
 
 }
 
-void Player::update_count(){
+void Player::hit(){
+    deck->draw_random_card();
+}
 
-}
-void Player::reset_count(){
-    count = 0;
-}
-void Player::display_card_list(){
-
-}
