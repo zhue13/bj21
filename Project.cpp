@@ -23,6 +23,7 @@ int main(void){
     player1->deck->display_cards();
     cout<<player1->is_blackjack()<<endl;
     cout<<player1->is_over_17()<<endl;
+    cout<<player1->is_bust()<<endl;
     //cout<<"cards:"<<player1->deck->display_cards()<<endl;
 
 

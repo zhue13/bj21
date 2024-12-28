@@ -33,7 +33,9 @@ void Player::double_down(){
     deck->draw_random_card();
 }
 void Player::split(){
-
+    if(deck->card[0].number == deck->card[1].number){
+        //split 
+    }
 }
 
 void Player::hit(){

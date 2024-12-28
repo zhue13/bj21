@@ -125,6 +125,7 @@ int Deck::get_sum(){
     }
 
     if(sum>21){
+        sum=0;
         for(int i=0;i<deck_size;i++){
             if (card[i].value==11){
                 card[i].value =1;
