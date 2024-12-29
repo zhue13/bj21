@@ -138,7 +138,6 @@ int Deck::get_sum(){
     return sum;
 }
 void Deck::display_cards(){
-    cout<<"Cards: ";
     for(int i=0;i<deck_size;i++){
         cout<<card[i].number<<'-'<<card[i].symbol<<" ";
     }

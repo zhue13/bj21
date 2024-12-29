@@ -41,4 +41,6 @@ void Player::split(){
 void Player::hit(){
     deck->draw_random_card();
 }
-
+void Player::delete_content(){
+    
+}

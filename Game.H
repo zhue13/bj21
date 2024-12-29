@@ -15,8 +15,9 @@ class Game{
     public:
         Game();
         Game(double total);
-        double get_total_moey();
+        double get_total_money();
         void set_bet(double bet);
+        void set_balance();
         double get_bet();
         void add_rounds();
         int get_rounds();

@@ -11,12 +11,15 @@ Game::Game(double total){
     rounds_won = 0;
     bet_amount = 0;
 }
-double Game::get_total_moey(){
+double Game::get_total_money(){
     return total_money;
 }
 void Game::set_bet(double bet){
     bet_amount = bet;
     total_money-=bet;
+}
+void Game::set_balance(){
+    total_money+=2*bet_amount;
 }
 double Game::get_bet(){
     return bet_amount;
