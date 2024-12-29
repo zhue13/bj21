@@ -6,4 +6,4 @@ lets make some money!
 2. Samuel Li
 
 **Dec 15th, 2024 - Dec 31st, 2024**
-- coded with object oriented approach using 4 classes 
+- coded with object oriented approach using 3 classes 
