@@ -30,5 +30,6 @@ class Deck{
         void add_deck_size();
         int get_sum();
         void display_cards();
+        void reset();
 };
 #endif

@@ -22,6 +22,6 @@ class Player{
         void double_down();
         void split();
         void hit();     
-        void delete_content();
+        
 };
 #endif

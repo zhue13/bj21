@@ -124,6 +124,7 @@ int Deck::get_sum(){
         sum+=card[i].value;
     }
 
+    //****faulty, need to check for when to have 1 ace as 11 and one as 1 or both as 1
     if(sum>21){
         sum=0;
         for(int i=0;i<deck_size;i++){
@@ -142,4 +143,13 @@ void Deck::display_cards(){
         cout<<card[i].number<<'-'<<card[i].symbol<<" ";
     }
     cout<<endl<<"Count: "<<sum<<endl;
+}
+void Deck::reset(){
+    deck_size = 0;
+    sum = 0;
+    for(int i=0;i<10;i++){
+        card[i].number = '\0';
+        card[i].symbol = '\0';
+        card[i].value = 0;
+    }
 }

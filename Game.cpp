@@ -18,8 +18,8 @@ void Game::set_bet(double bet){
     bet_amount = bet;
     total_money-=bet;
 }
-void Game::set_balance(){
-    total_money+=2*bet_amount;
+void Game::set_balance(double bet){
+    total_money+=bet;
 }
 double Game::get_bet(){
     return bet_amount;
