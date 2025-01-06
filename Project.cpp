@@ -71,7 +71,7 @@ void rungame(void){
             }
             else{
                 cout<<endl<<"**BLACKJACK**";
-                bet*=2.5;
+                bet*=1.5;
                 game->set_balance(bet);
                 cout<<endl<<"Result: ";
                 cout<<"House: ";
@@ -79,7 +79,7 @@ void rungame(void){
                 cout<<"Player: ";
                 player1->deck->display_cards();
                 cout<<"-------------------------"<<endl;
-                cout<<"Congrats!! You Win $ "<<bet<<endl;
+                cout<<"Congrats!! You Win $ "<<bet*2.5<<endl;
                 continue;
             }
         }
@@ -154,6 +154,7 @@ void rungame(void){
         else if (action =='D'||action=='d'){
             player1->hit();
             house->fill_till_17();
+            game->set_bet(bet);
             bet*=2;
             check_win_conditions();
             continue;
@@ -183,7 +184,6 @@ void check_win_conditions(){
     house_count = house->deck->get_sum();
 
     if((player_count>house_count&&!player1->is_bust()&&house_count>=17)||(house->is_bust())){
-        bet*=2;
         game->set_balance(bet);
         cout<<endl<<"Result: ";
         cout<<"House: ";
@@ -191,11 +191,10 @@ void check_win_conditions(){
         cout<<"Player: ";
         player1->deck->display_cards();
         cout<<"-------------------------"<<endl;
-        cout<<"Congrats!! You Win $ "<<bet<<endl;
+        cout<<"Congrats!! You Win $ "<<bet*2<<endl;
         
     }
     else if(player_count==house_count&&!player1->is_bust()&&player_count>=17){
-        game->set_balance(bet);
         cout<<endl<<"Result: ";
         cout<<"House: ";
         house->deck->display_cards();
